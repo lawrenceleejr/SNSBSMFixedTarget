@@ -98,14 +98,21 @@ def main():
 
     fig, ax = plt.subplots(figsize=(8.2, 6.4))
 
-    def overlay(fname, color):
+    def overlay(fname, label, lx, ly):
         dat = np.loadtxt(HERE / "limit_data" / fname)
-        ax.fill(dat[:, 0] / 1e6, dat[:, 1], color=color, alpha=0.28, lw=0, zorder=1)
+        ax.fill(dat[:, 0] / 1e6, dat[:, 1], color="0.55", alpha=0.28, lw=0, zorder=1)
+        ax.text(lx, ly, label, fontsize=7, color="0.45", zorder=6, alpha=0.85)
 
-    for f in ["BeamDump.txt", "PrimEx.txt", "BESIII.txt", "GlueX.txt",
-              "FASER.txt", "OPAL.txt", "LEP.txt", "SN1987A_decay.txt",
-              "SN1987A_HeavyALP_gamma.txt", "BBN_10MeV.txt"]:
-        overlay(f, "0.55")
+    overlay("BeamDump.txt", "E137/E141/CHARM", 0.45, 3e-5)
+    overlay("PrimEx.txt", "PrimEx", 100, 2.5e-3)
+    overlay("BESIII.txt", "BESIII", 320, 4.5e-4)
+    overlay("GlueX.txt", "GlueX", 230, 1.4e-3)
+    overlay("FASER.txt", "FASER", 14, 3e-4)
+    overlay("OPAL.txt", "OPAL", 30, 1.2e-2)
+    overlay("LEP.txt", "LEP", 2.0, 2.5e-3)
+    overlay("SN1987A_decay.txt", "SN1987A (decay)", 1.5, 3e-9)
+    overlay("SN1987A_HeavyALP_gamma.txt", "SN1987A ($\\gamma$)", 0.5, 1.5e-7)
+    overlay("BBN_10MeV.txt", "BBN", 12, 3e-8)
 
     print(f"{'scenario':45s}  {'floor@100MeV':>12s}  {'ceiling@100MeV':>14s}  {'max mass':>9s}")
     for label, (E, fg, npr, col, ls) in scenarios.items():
