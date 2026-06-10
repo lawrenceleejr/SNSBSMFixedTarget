@@ -1,0 +1,65 @@
+{
+  "n_events": 100000,
+  "protons_per_pulse": 240000000000000.0,
+  "plane0": {
+    "photon": {
+      "per_pulse_total": 45984000000000.0,
+      "per_pulse_within_700ns": 45686400000000.0,
+      "median_t_ns": 5.041285,
+      "median_ekin_MeV": 1.040515
+    },
+    "neutron": {
+      "per_pulse_total": 667209600000000.0,
+      "per_pulse_within_700ns": 666876000000000.0,
+      "median_t_ns": 62.40135,
+      "median_ekin_MeV": 0.48283299999999996
+    },
+    "charged": {
+      "per_pulse_total": 33849600000000.0,
+      "per_pulse_within_700ns": 25838400000000.0,
+      "median_t_ns": 5.263985,
+      "median_ekin_MeV": 48.823
+    }
+  },
+  "plane1": {
+    "photon": {
+      "per_pulse_total": 1384800000000.0,
+      "per_pulse_within_700ns": 1375200000000.0,
+      "median_t_ns": 14.5245,
+      "median_ekin_MeV": 1.00843
+    },
+    "neutron": {
+      "per_pulse_total": 20215200000000.0,
+      "per_pulse_within_700ns": 18050400000000.0,
+      "median_t_ns": 348.477,
+      "median_ekin_MeV": 0.537981
+    },
+    "charged": {
+      "per_pulse_total": 6828000000000.0,
+      "per_pulse_within_700ns": 6540000000000.0,
+      "median_t_ns": 15.6494,
+      "median_ekin_MeV": 569.955
+    }
+  },
+  "plane2": {
+    "photon": {
+      "per_pulse_total": 266400000000.0,
+      "per_pulse_within_700ns": 266400000000.0,
+      "median_t_ns": 53.2091,
+      "median_ekin_MeV": 1.00864
+    },
+    "neutron": {
+      "per_pulse_total": 4144800000000.0,
+      "per_pulse_within_700ns": 1032000000000.0,
+      "median_t_ns": 1402.38,
+      "median_ekin_MeV": 0.599278
+    },
+    "charged": {
+      "per_pulse_total": 1927200000000.0,
+      "per_pulse_within_700ns": 1876800000000.0,
+      "median_t_ns": 64.1805,
+      "median_ekin_MeV": 567.577
+    }
+  },
+  "plane1_neutron_frac_after_20ns": 0.9580909414697851
+}

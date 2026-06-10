@@ -79,7 +79,22 @@ applied by convolution. Results: `study/geant/README.md`.
 
 Headlines (per 2.4×10¹⁴-proton pulse, E > 0.1 MeV):
 
-GEANT_RESULTS_PLACEHOLDER
+| Plane | photons | neutrons | charged | n in 700 ns window | n earlier than γTOF+8 ns |
+|---|---|---|---|---|---|
+| chamber entrance (0.6 m) | 4.6×10¹³ | 6.7×10¹⁴ | 3.4×10¹³ | ~100% | — |
+| calorimeter face (3.6 m) | 1.4×10¹² | 2.0×10¹³ | 6.8×10¹² | 90% | 4.2% |
+| far hall (15 m) | 2.7×10¹¹ | 4.1×10¹² | 1.9×10¹² | 25% | ~0 |
+
+Three design-driving conclusions: (i) with the ~700 ns ring pulse, the
+**far hall** is in the validated CCM/COHERENT regime (most neutrons arrive
+out-of-window and TOF-late; standard shielding suffices); (ii) the **near
+chamber cannot run zero-background against a bare dump at 700 ns** — the
+in-window flash at the calorimeter is ~10¹³ particles per pulse; (iii) with
+**ns micro-slices**, 96% of neutrons at 3.6 m arrive after the photon signal
+window, cutting the in-window flash per micro-bunch by ~10⁷ before shielding
+or reconstruction cuts. The near chamber is therefore baselined with a
+dump-side shield plug, a sweeper dipole (≈7×10¹² charged punch-through per
+pulse, median 570 MeV), and micro-sliced beam as its design operating mode.
 
 Mitigation strategy, in order of leverage: (i) the in-pulse flash never
 touches the *vacuum* volume — backgrounds must produce a reconstructed

@@ -58,8 +58,10 @@ configuration; the near chamber is what buys discovery space.
   question.** DAMSA assumes ns-scale pulses; the in-pulse flash here is ~10⁵×
   longer. This directly motivates the laser-stripped ns micro-slice option
   flagged in the beam-structure note — at the linac station, a gated stripping
-  laser could provide DAMSA-grade timing at reduced power. A GEANT4 study of
-  the prompt neutron/photon flash through the chamber walls is the next step.
+  laser could provide DAMSA-grade timing at reduced power. **A Geant4 study of
+  the prompt flash is now in [`geant/`](geant/README.md)**: it confirms the
+  bare-dump 700 ns configuration is not zero-background at 0.3 m, and
+  quantifies the ~10⁷ in-window suppression available from ns micro-slices.
 - NA64 visible-decay and NuCal recasts (not in the overlay set) cover part of
   the band at m ≲ 100 MeV, g ~ 10⁻⁴–10⁻²; the high-mass wedge survives.
 - Only π⁰ decay photons are included (no EM-shower photons, no proton
