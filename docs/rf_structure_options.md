@@ -73,7 +73,7 @@ neutron program. The 1 µs spacing lets each bunch's neutron flash clear the
 | photons > 30 MeV | 1.2×10⁴ | ~20 X₀ Pb plug on dump face → < 1 |
 | neutrons, same bunch | ~0 (needs β > 0.96 ⇒ T_n > 2.4 GeV) | kinematically excluded |
 | neutrons, previous bunches (µs-aliased) | ~30, vertex-less | diphoton vertex + mass |
-| steady-state | in-gate duty 1.3×10⁻⁹ | negligible |
+| steady-state | in-gate duty 2.1×10⁻⁵ | negligible for a ~0.1 m² detector |
 
 This is the configuration where the **zero-background assumption of the ALP
 study is actually defensible**, with each candidate independently verified by
