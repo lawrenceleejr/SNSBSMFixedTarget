@@ -84,3 +84,40 @@ drive the far-hall program.
   duty factor handle these).
 - Delta-pulse convolution assumes a rectangular beam pulse.
 - Statistics: 10⁵ primaries → few-% precision at the far plane.
+
+## DAMSA-at-SNS background budget: validating the zero-background assumption
+
+The limit plots assume zero background (90% CL = 2.3 signal events) for the
+DAMSA-at-SNS configuration. A second Geant4 run (`flash_damsa.cc`: 10 cm W
+dump + 10 cm W plug ≈ 30 X₀ ≈ 1 λ_int; calorimeter plane z = 0.55 m,
+r = 0.1 m; 10⁵ protons) tests that assumption directly. An ALP candidate
+requires **two neutral EM clusters, each > 30 MeV, inside the 0.4 ns TOF
+gate, forming a vertex inside the vacuum volume and pointing back to the
+dump**. Sparse-train exposure: 5.4×10¹² gates in 5 yr
+(`analyze_damsa_flash.py` → `damsa_background_budget.json`).
+
+| Component | Measured / derived | In-gate, per bunch | Killed by |
+|---|---|---|---|
+| Prompt flash (same bunch) | **0 hits in 10⁵ p — even before the plug** at the DAMSA aperture; plug adds e⁻²² for γ | < 3×10⁻⁶ (90% UL × plug) | MC UL alone → ≤ 26 accidental pairs / 5 yr |
+| Glow γ (π/µ decay chain, phase-uniform) | 10.9/gate, but max E = 23.2 MeV — nuclear (giant-dipole) endpoint ~25 MeV | > 30 MeV: ~4×10⁻⁹ (Michel-brems escape, calculable) | 30 MeV cluster threshold |
+| Glow e± (Michel) | 0.75/gate, ≤ 53 MeV | — | tracker charged veto |
+| Glow neutrinos | 65/gate | — | invisible (σ ~ 10⁻⁴³ cm²) |
+| Glow neutrons | 2.2/gate, all < 15 MeV | — | threshold + CsI pulse-shape |
+| Cosmics | in-gate live time = 2160 s / 5 yr | ~10³–10⁴ µ total | charged veto; neutrals fail vertex+pointing |
+
+Combining: ≤ 26 accidental diphoton pairs in 5 yr **before** topology cuts
+(dominated by the MC-statistics upper limit on prompt punch-through, not by
+any observed process), and **N_bkg ≈ 8×10⁻⁴ events after the fiducial-vertex
+(≤10⁻³) and mass-window (~3%) requirements alone** — pointing, cluster shape,
+and the 4D timing are still in reserve. Even the deliberately unphysical
+exponential extrapolation of the glow spectrum through the nuclear endpoint
+(2.3×10⁻³ γ>30 MeV/gate) yields only ~4 events after the full cut chain.
+
+Conclusion: **the zero-background assumption is fair for the sparse ns-bunch
+DAMSA-at-SNS configuration**, with three load-bearing requirements exposed by
+the simulation: (i) the ≥30 MeV per-cluster threshold (the glow is entirely
+below it — a physics statement about nuclear γ endpoints, confirmed by the
+MC spectrum); (ii) the front-tracker charged veto (Michel positrons);
+(iii) the ~30 X₀ dump-side plug (prompt γ flash). A dedicated high-statistics
+run of the prompt punch-through (the current number is an MC-stat bound, not
+a measurement) is the one item left for a full proposal.

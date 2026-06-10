@@ -1,0 +1,23 @@
+{
+  "protons_per_bunch": 590000000.0,
+  "gate_ns": 0.4,
+  "gates_5yr": 5400000000000.0,
+  "prompt_in_gate_hits_in_MC": 0,
+  "glow_per_gate": {
+    "photon_all": 10.930526315789477,
+    "photon_gt15MeV": 0.248421052631579,
+    "photon_gt30MeV_MCcount": 0,
+    "photon_max_E_MeV": 23.2163,
+    "electron_positron": 0.745263157894737,
+    "neutrino_invisible": 65.08631578947369,
+    "neutron": 2.2357894736842105
+  },
+  "glow_gamma_gt30_per_gate_physics": 3.642673400207767e-09,
+  "glow_accidental_pairs_5yr": 3.5826487651569284e-05,
+  "glow_gamma_gt30_per_gate_exp_extrapolation": 0.002287878798459454,
+  "bare_prompt_gamma30_in_MC": 0,
+  "prompt_gamma30_per_gate_after_plug_UL": 3.1089122997089274e-06,
+  "prompt_pairs_5yr_UL": 26.09640635565992,
+  "total_accidental_pairs_5yr_before_topology": 26.157595843691304,
+  "expected_events_5yr_after_topology": 0.0007847278753107391
+}

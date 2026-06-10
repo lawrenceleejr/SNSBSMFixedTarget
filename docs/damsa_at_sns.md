@@ -87,6 +87,23 @@ the SNS cannot match is the eventual PIP-II endgame's raw POT and LESA's
 installation, and the factor-4 floor gap is small compared to the decade of
 unexplored coupling the wedge spans.
 
+## Is the zero-background assumption fair?
+
+Yes — and it is now *checked*, not assumed. The Geant4 flash study exists for
+exactly this purpose: the first (bare-dump, 700 ns) run **falsified** the
+naive assumption and drove the design to the sparse ns-bunch mode + shield
+plug; a second run in the actual DAMSA-at-SNS geometry then **validated** the
+final configuration. The budget (`study/geant/README.md`, table at the end):
+zero prompt in-gate hits in 10⁵ simulated protons even before the plug; the
+inter-bunch "glow" is 11 photons per gate but with a hard nuclear endpoint at
+~25 MeV (observed max 23.2 MeV) — below the 30 MeV cluster threshold; the
+remaining in-gate populations are neutrinos (invisible) and <1 Michel
+positron per gate (charged-vetoed). Expected background:
+**≤26 accidental pairs in 5 yr before topology cuts (an MC-statistics upper
+limit), ~8×10⁻⁴ events after the fiducial-vertex and mass requirements** —
+far below the 2.3-event sensitivity quantum. The load-bearing design items:
+30 MeV per-cluster threshold, front-tracker charged veto, ~30 X₀ plug.
+
 ## Costing posture
 
 Beam: gated stripping laser on the existing laser-stripping development line
