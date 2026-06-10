@@ -149,3 +149,12 @@ than retrofitted.
 - SEEMS (SNS linac extraction concept): [arXiv:2212.09823](https://arxiv.org/abs/2212.09823)
 - Laser-assisted charge exchange at SNS: [NAPAC'25 TUYD01](https://prebys.physics.ucdavis.edu/NAPAC-25/proceedings/pdf/TUYD01.pdf)
 - Accelerator-based dark sector facilities (Snowmass): [arXiv:2206.04220](https://arxiv.org/abs/2206.04220)
+
+## 6. First quantitative sensitivity study
+
+A first-pass ALP (a → γγ, Primakoff production) sensitivity study for the
+option-2b beam is in [`study/`](../study/README.md), including the resulting
+limit plot over the world's existing constraints. Headline: a DAMSA-style near
+decay chamber (0.3 m from a compact W dump) with 5 yr at 300 kW probes new
+parameter space in the short-lifetime wedge m_a ≈ 30–300 MeV between the
+E137/E141/CHARM ceiling and the FASER/PrimEx/BESIII floors.
