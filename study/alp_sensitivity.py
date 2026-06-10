@@ -175,6 +175,14 @@ def main():
         results[key] = N
         print(f"{key}: max N_sig = {N.max():.3g}")
 
+    # linac ns-bunch mode: sparse 402.5 MHz micro-bunches (5.9e8 p) at 1 MHz
+    # during the 1 ms macropulse, 60 Hz -> 7.3 kW, 6.4e20 POT/yr, but with
+    # event-by-event TOF (true zero-background near chamber).
+    POT_NSBUNCH = 6.4e20
+    results["near ns-bunch 5 yr"] = signal_yield(
+        m_grid, g_grid, E_bins, f_gamma, POT_NSBUNCH * 5.0, **CONFIGS["near"])
+    print(f"near ns-bunch 5 yr: max N_sig = {results['near ns-bunch 5 yr'].max():.3g}")
+
     # ------------------------------------------------------------------
     # Plot
     # ------------------------------------------------------------------
@@ -207,17 +215,21 @@ def main():
         "near 1 yr": ("--", "tab:red"),
         "near 5 yr": ("-", "tab:red"),
         "far 5 yr": (":", "darkorange"),
+        "near ns-bunch 5 yr": ("-.", "tab:purple"),
     }
     names = {
         "near 1 yr": "near chamber (0.3 m), 1 yr",
         "near 5 yr": "near chamber (0.3 m), 5 yr",
         "far 5 yr": "far hall (15 m), 5 yr",
+        "near ns-bunch 5 yr": "near chamber, linac ns-bunch mode (7.3 kW), 5 yr",
     }
     for key, (ls, col) in styles.items():
         ax.contour(mg, g_grid, results[key].T, levels=[N90],
                    colors=[col], linestyles=[ls], linewidths=2, zorder=5)
+        label = names[key]
+        prefix = "SNS 300 kW dump, " if "ns-bunch" not in key else "SNS "
         ax.plot([], [], ls=ls, color=col, lw=2,
-                label=f"SNS 300 kW dump, {names[key]}, 90% CL")
+                label=f"{prefix}{label}, 90% CL")
 
     ax.set_xscale("log")
     ax.set_yscale("log")

@@ -106,9 +106,12 @@ make signal-photon TOF windows fully background-free between slices.
 
 ## 7. Open questions / R&D
 
-1. Laser-stripping gating: can the linac station deliver ns micro-slices, and
-   at what extracted power? (Determines whether the near chamber runs at the
-   linac or ring station.)
+1. Laser-stripping gating: can the linac station deliver 402.5 MHz-locked
+   ~50 ps micro-bunches in a sparse train, and can the ring preserve a
+   400 MHz comb through accumulation? Both upgrades are analyzed in
+   [rf_structure_options.md](rf_structure_options.md): the former enables the
+   zero-background near chamber at 7 kW, the latter cuts every phase-uniform
+   far-hall background 7-17x at full power.
 2. Kicker extraction at 6 Hz: real pulse shape and extraction gap; trade
    against FTS/STS availability.
 3. Dump thermal design at 50 kJ/pulse with a thin downstream face.
